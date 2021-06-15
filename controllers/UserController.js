@@ -4,7 +4,6 @@ class UserController {
 
         this.formEl = document.getElementById(formId);
         this.tableEl = document.getElementById(tableId);
-        console.log(this.formEl);
         this.onSubmit();
 
     }
@@ -16,6 +15,7 @@ class UserController {
             event.preventDefault();
 
             this.addLine(this.getValues());
+
         });
 
     };
@@ -24,7 +24,7 @@ class UserController {
 
         let user = {};
 
-        this.formEl.element.forEach(function(field, index) {
+        [...this.formEl.elements].forEach(function(field, index) {
     
             if(field.name == "gender") {
                 
